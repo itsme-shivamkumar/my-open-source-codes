@@ -60,3 +60,13 @@ int main() {
     Car c; c.show();
     return 0;
 }
+
+/* OUTPUT
+
+Engine is 0 stroke, Manufactured by: Unknown
+Engine is 4 stroke, Manufactured by: Toyota
+Pure Functions must be implemented in Derived Class
+Car class is called ()
+Car's Engine is 0 stroke, Manufactured by: Toyota
+
+*/
