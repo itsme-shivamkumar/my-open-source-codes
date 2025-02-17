@@ -213,76 +213,6 @@ public:
 };
 ```
 
-# Backtracking Notes
-
-## Subset
-
-### Problem Statement
-Given an integer array `nums` of unique elements, return all possible subsets (the power set). The solution set must not contain duplicate subsets.
-
-### Example
-```cpp
-Input: nums = [1,2,3]
-Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
-```
-
-### Solution
-```cpp
-class Solution {
-public:
-    void bt(int i, vector<int>& v, vector<int>& temp, vector<vector<int>>& res){
-        res.push_back(temp);
-        if(i >= v.size()) return;
-        for(int idx = i; idx < v.size(); idx++){
-            temp.push_back(v[idx]);
-            bt(idx+1, v, temp, res);
-            temp.pop_back();
-        }
-    }
-    vector<vector<int>> subsets(vector<int>& nums) {
-        vector<vector<int>> res;
-        vector<int> temp;
-        bt(0, nums, temp, res);
-        return res;
-    }
-};
-```
-
-## Subsets II
-
-### Problem Statement
-Given an integer array `nums` that may contain duplicates, return all possible subsets (the power set) without duplicates.
-
-### Example
-```cpp
-Input: nums = [1,2,2]
-Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
-```
-
-### Solution
-```cpp
-class Solution {
-public:
-    void bt(int i, vector<int>& nums, vector<int>& temp, vector<vector<int>>& res){
-        res.push_back(temp);
-        if(i >= nums.size()) return;
-        for(int idx = i; idx < nums.size(); idx++){
-            if(idx > i && nums[idx] == nums[idx-1]) continue;
-            temp.push_back(nums[idx]);
-            bt(idx+1, nums, temp, res);
-            temp.pop_back();
-        }
-    }
-    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
-        vector<vector<int>> res;
-        vector<int> temp;
-        sort(nums.begin(), nums.end());
-        bt(0, nums, temp, res);
-        return res;
-    }
-};
-```
-
 ## Permutations
 
 ### Problem Statement
@@ -414,6 +344,105 @@ public:
         sort(tiles.begin(),tiles.end());
         bt(0,tiles,temp,res);
         return finalRes;
+    }
+};
+```
+
+### Another Solution (1)
+```cpp
+class Solution {
+public:
+    int numTilePossibilities(string tiles) {
+        unordered_set<string> sequences;
+        vector<bool> used(tiles.length(), false);
+
+        // Generate all possible sequences including empty string
+        generateSequences(tiles, "", used, sequences);
+
+        // Subtract 1 to exclude empty string from count
+        return sequences.size() - 1;
+    }
+
+private:
+    void generateSequences(string& tiles, string current, vector<bool>& used,
+                           unordered_set<string>& sequences) {
+        // Add current sequence to set
+        sequences.insert(current);
+
+        // Try adding each unused character to current sequence
+        for (int pos = 0; pos < tiles.length(); ++pos) {
+            if (!used[pos]) {
+                used[pos] = true;
+                generateSequences(tiles, current + tiles[pos], used, sequences);
+                used[pos] = false;
+            }
+        }
+    }
+};
+```
+
+### Another Solution (2)
+```cpp
+class Solution {
+public:
+    int numTilePossibilities(string tiles) {
+        // Track frequency of each uppercase letter (A-Z)
+        int charCount[26] = {0};
+        for (char c : tiles) {
+            charCount[c - 'A']++;
+        }
+
+        // Find all possible sequences using character frequencies
+        return findSequences(charCount);
+    }
+
+private:
+    int findSequences(int charCount[26]) {
+        int totalCount = 0;
+
+        // Try using each available character
+        for (int pos = 0; pos < 26; pos++) {
+            if (charCount[pos] == 0) {
+                continue;
+            }
+
+            // Add current character and recurse
+            totalCount++;
+            charCount[pos]--;
+            totalCount += findSequences(charCount);
+            charCount[pos]++;
+        }
+
+        return totalCount;
+    }
+};
+```
+
+### Another Solution (3)
+```cpp
+class Solution {
+public:
+    int bt(string tiles, unordered_map<char,int>& mp, unordered_set<char>& st){
+        int res = 0;
+        for(auto it:st){
+            if(mp.find(it)!=mp.end()){
+                mp[it]--;
+                res++;
+                if(mp[it]==0)mp.erase(it);
+                res+=bt(tiles,mp,st);
+                mp[it]++;
+            }
+        }
+        return res;
+    }
+    int numTilePossibilities(string tiles) {
+        unordered_map<char,int> mp;
+        unordered_set<char> st;
+        for(auto ch: tiles){
+            mp[ch]++;
+            st.insert(ch);
+        }
+        return bt(tiles, mp, st);
     }
 };
 ```
