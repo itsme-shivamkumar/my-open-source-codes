@@ -31,6 +31,7 @@ class Engine:public AbstractEngine{
     cout<<"Pure Functions must be implemented in Derived Class"<<endl;
 }
 };
+
 string Engine::manufacturer = "Unknown"; // all static variables must be initialized
 
 class Car:public Engine{
