@@ -14,7 +14,7 @@ public class Main{
         list.sort();
         obj.sout(list);
     }
-    <T> void sout(T s){
+    public <T> void sout(T s){
         System.out.println(s);
     }
 }

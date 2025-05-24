@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class AbstractEngine{
+class AbstractEngine {
     private:
     int stroke;
     public:
