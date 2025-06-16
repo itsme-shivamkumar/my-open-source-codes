@@ -132,7 +132,7 @@ Collections.sort(list, byAgeDesc);  // Custom sorting logic
 
 ### **Collections Utility Methods**
 ```java
-List<Integer> repeatedList = Collections.nCopies(5, 100);  // List with 5 copies of 100
+List<Integer> repeatedList = Collections.nCopies(5, 100);  // List with 5 copies of 100 (shallow copy)
 Collections.shuffle(list);  // Shuffle elements randomly
 Collections.swap(list, 0, 1);  // Swap two elements
 Collections.reverse(list);  // Reverse the list

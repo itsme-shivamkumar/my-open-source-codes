@@ -69,7 +69,7 @@ public class Module_1 { // No Declaration of any generics hence in generic metho
             .map(n -> n * 3)
             .sorted((a,b)->Integer.compare(b,a))    // sort desc
             .peek(n -> System.out.println("Peeking: " + n)) // debug
-            .collect(Collectors.toList());
+            .collect(Collectors.toList()); // import java.util.stream.Collectors;
 
         MainObj.soutn("Final List: " + result); // [90, 60, 30]
 
