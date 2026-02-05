@@ -32,19 +32,22 @@ All problems are grouped into **logical categories**, because interviewers often
 
 *(Focus: state transitions, availability, concurrency thinking)*
 
-| Problem                             | Links                                                                                                                  | Company     |
-| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------- |
-| **Ride Sharing System**             | [Repo](https://github.com/kumaransg/LLD/tree/main/Ride%20Sharing%20)                                                   | Very Common |
-| **Lift / Elevator System**          | [Solution](https://lldcoding.com/design-lld-lift-machine-coding)                                                       | Very Common |
-| **Food Ordering System (FoodKart)** | [Doc](https://docs.google.com/document/d/1Bmkz9omByHqVvwU45cvkBRSwJAPKw9yaDsRlEnCg_lg/edit#)                           | Flipkart    |
-| **Food Delivery App (Zomato-like)** | [Solution](https://lldcoding.com/design-lld-a-system-for-online-food-ordering-and-delivery-like-zomato-machine-coding) | Common      |
-| **Event Calendar (Scheduling)**     | Same as above                                                                                                          | Flipkart    |
+| Problem                                      | Links                                                                                                                  | Company     |
+| -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------- |
+| **Ride Sharing System**                      | [Repo](https://github.com/kumaransg/LLD/tree/main/Ride%20Sharing%20)                                                   | Very Common |
+| **Movie Ticket Booking (BookMyShow)**        | [Solution](https://lldcoding.com/design-lld-movie-ticket-booking-system-machine-coding)                                | Very Common |
+| **Quick Commerce / Instant Delivery (Zepto)**| [Solution](https://lldcoding.com/design-lld-quick-commerce-delivery-system-machine-coding)                             | Common      |
+| **Lift / Elevator System**                   | [Solution](https://lldcoding.com/design-lld-lift-machine-coding)                                                       | Very Common |
+| **Food Ordering System (FoodKart)**          | [Doc](https://docs.google.com/document/d/1Bmkz9omByHqVvwU45cvkBRSwJAPKw9yaDsRlEnCg_lg/edit#)                           | Flipkart    |
+| **Food Delivery App (Zomato-like)**          | [Solution](https://lldcoding.com/design-lld-a-system-for-online-food-ordering-and-delivery-like-zomato-machine-coding) | Common      |
+| **Event Calendar (Scheduling)**              | Same as above                                                                                                          | Flipkart    |
 
 📌 **Patterns tested**:
 
 * State machines
 * Availability tracking
 * Slot allocation
+* Concurrency handling
 * Command / Strategy patterns
 
 ---
@@ -120,6 +123,13 @@ All problems are grouped into **logical categories**, because interviewers often
 | **BitTorrent (P2P)**          | [Solution](https://lldcoding.com/design-lld-a-peer-to-peer-file-sharing-system-like-bittorrent-machine-coding)    |
 | **Music Recognition System**  | [Solution](https://lldcoding.com/design-lld-a-music-recognition-system-using-audio-fingerprinting-machine-coding) |
 
+📌 **Patterns tested**:
+
+* Abstraction layers
+* Hierarchy modeling
+* Metadata management
+* Content delivery
+
 ---
 
 ## 7️⃣ Large Information & Analytics Systems
@@ -130,9 +140,9 @@ All problems are grouped into **logical categories**, because interviewers often
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------- | ------- |
 | **Cricket Match Dashboard**   | [Leetcode](https://leetcode.com/discuss/interview-question/990227/udaan-assignment-cricket-match-dashboard) | Udaan   |
 | **Cricinfo System**           | In-repo                                                                                                     | Common  |
-| **Twitter / X**               | [Solution](https://lldcoding.com/design-lld-twitter-machine-coding)                                         |         |
-| **Google Maps**               | [Solution](https://lldcoding.com/design-lld-google-maps-machine-coding)                                     |         |
-| **Distributed Search Engine** | [Solution](https://lldcoding.com/design-lld-distributed-search-engine-machine-coding)                       |         |
+| **Twitter / X**               | [Solution](https://lldcoding.com/design-lld-twitter-machine-coding)                                         | Common  |
+| **Google Maps**               | [Solution](https://lldcoding.com/design-lld-google-maps-machine-coding)                                     | Common  |
+| **Distributed Search Engine** | [Solution](https://lldcoding.com/design-lld-distributed-search-engine-machine-coding)                       | Common  |
 
 📌 **Patterns tested**:
 
