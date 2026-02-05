@@ -152,7 +152,3 @@ All problems are grouped into **logical categories**, because interviewers often
 | **AWS Lambda (Function Platform)** | [Solution](https://lldcoding.com/design-lld-aws-lambda-machine-coding)                                         |
 | **Mentorship Platform**            | [Solution](https://lldcoding.com/design-lld-mentorship-platform-like-preplaced-machine-coding)                 |
 | **CodePair Platform**              | [Solution](https://lldcoding.com/design-lld-pair-programming-platform-like-hackerrank-codepair-machine-coding) |
-
-
-
-Just tell me.
